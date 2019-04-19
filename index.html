@@ -32,96 +32,11 @@
   <link rel="stylesheet" type="text/css" href="components/transition.css">
 
   <style type="text/css">
-    .hidden.menu {
-      display: none;
-    }
-    .masthead.segment {
-      min-height: 700px;
-      padding: 1em 0em;
-    }
-    .masthead .logo.item img {
-      margin-right: 1em;
-    }
-    .masthead .ui.menu .ui.button {
-      margin-left: 0.5em;
-    }
-    .masthead h1.ui.header {
-      margin-top: 3em;
-      margin-bottom: 0em;
-      font-size: 4em;
-      font-weight: normal;
-    }
-    .masthead h2 {
-      font-size: 1.7em;
-      font-weight: normal;
-    }
-    .ui.vertical.stripe {
-      padding: 8em 0em;
-    }
-    .ui.vertical.stripe h3 {
-      font-size: 2em;
-    }
-    .ui.vertical.stripe .button + h3,
-    .ui.vertical.stripe p + h3 {
-      margin-top: 3em;
-    }
-    .ui.vertical.stripe .floated.image {
-      clear: both;
-    }
-    .ui.vertical.stripe p {
-      font-size: 1.33em;
-    }
-    .ui.vertical.stripe .horizontal.divider {
-      margin: 3em 0em;
-    }
-    .quote.stripe.segment {
-      padding: 0em;
-    }
-    .quote.stripe.segment .grid .column {
-      padding-top: 5em;
-      padding-bottom: 5em;
-    }
-    .footer.segment {
-      padding: 5em 0em;
-    }
-    .secondary.pointing.menu .toc.item {
-      display: none;
-    }
-    @media only screen and (max-width: 700px) {
-      .ui.fixed.menu {
-        display: none !important;
-      }
-      .secondary.pointing.menu .item,
-      .secondary.pointing.menu .menu {
-        display: none;
-      }
-      .secondary.pointing.menu .toc.item {
-        display: block;
-      }
-      .masthead.segment {
-        min-height: 350px;
-      }
-      .masthead h1.ui.header {
-        font-size: 2em;
-        margin-top: 1.5em;
-      }
-      .masthead h2 {
-        margin-top: 0.5em;
-        font-size: 1.5em;
-      }
-    }
+
   </style>
   
   <!-- Custom Stlye !-->
-  <style href="customstyle.css"></style>
-  <style>
-    #Home_main{
-       background-image: url("images/Wallpaper_1.jpeg");
-       background-size: cover;
-       background-repeat: no-repeat;
-       background-position: center;
-     }
-  </style>
+  <link rel="stylesheet" type="text/css" href="customstyle.css">
   
   <!--Script !-->
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -147,6 +62,9 @@
       $('.ui.sidebar')
         .sidebar('attach events', '.toc.item')
       ;
+      $('.preparing').click(function(){
+          alert("심심할 때 만들 계획입니다 8ㅅ8");
+      });
     })
   ;
   </script>
@@ -155,110 +73,272 @@
 <body>
 <!-- Following Menu -->
 <div class="ui large top fixed hidden menu">
-  <div class="ui container">
-    <a class="active item">Home</a>
-    <a class="item">Project</a>
-    <a class="item">Study</a>
-    <a class="item">Travel</a>
-    <div class="right menu">
-      <div class="item">
-        <button class="ui circular inverted basic icon button">
-            <i class="linkedin icon"></i>
-        </button>
-      </div>
-    </div>
+  <div class="ui container left_padding">
+    <a class="active item">About</a>
+    <a class="preparing item">Project</a>
+    <a class="preparing item">Study</a>
+    <a class="preparing item">Travel</a>
   </div>
 </div>
 
 <!-- Sidebar Menu -->
 <div class="ui vertical sidebar menu">
-  <a class="active item">Home</a>
+  <a class="active item">About</a>
   <a class="item">Project</a>
   <a class="item">Study</a>
   <a class="item">Travel</a>
 </div>
 
 <!-- Page Contents -->
-<div class="pusher">
-  <div class="ui vertical masthead center aligned segment" id="Home_main">
 
-    <div class="ui container">
-      <div class="ui large secondary pointing menu">
-        <a class="toc item">
-          <i class="sidebar icon"></i>
-        </a>
-        <a class="active item">Home</a>
-        <a class="item">Project</a>
-        <a class="item">Study</a>
-        <a class="item">Travel</a>
-        <div class="right item">
-          <button class="ui circular inverted basic icon button">
-            <i class="linkedin icon"></i>
-          </button>
+<div class="pusher">
+  <!-- Main Menu -->
+  <div class="ui container left_padding">
+    <div class="ui large secondary pointing menu">
+      <a class="toc item">
+        <i class="sidebar icon"></i>
+      </a>
+      <a class="active item">About</a>
+      <a class="preparing item">Project</a>
+      <a class="preparing item">Study</a>
+      <a class="preparing item">Travel</a>
+    </div>
+  </div>
+  <div class="ui vertical masthead center aligned segment" id="Home_main">
+    <!-- Header Profile !-->
+    <div class="flex_centered">
+      <div class="ui text container">
+        <img class="ui centered medium circular image" src="images/Profile_Sagi.png">
+        <h2 class="ui inverted header" style="font-family: -webkit-pictograph">&nbsp;YOON JIN CHUNG </h2>
+        <div class="ui item" style="color: white">
+          <div class="content">
+            <div class="description">
+              <p>
+                B.S in Computer Science, <a class="replace_annoying_blue" href="https://www.korea.edu/">Korea University</a>
+              </p>
+            </div>
+            <br>
+            <div class="extra">
+              <a class="ui circular facebook icon button" href="https://www.facebook.com/profile.php?id=100006374685302" >
+                <i class="facebook icon"></i>
+              </a>
+              <a class="ui circular linkedin icon button" href="https://www.linkedin.com/in/yoonjin-chung-03783016a/">
+                <i class="linkedin icon"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="ui text container">
-      <h1 class="ui header" style="font-family: -webkit-pictograph">
-        YOON JIN CHUNG
-      </h1>
-      <h2 class="ui header" style="font-family: monospace">언젠간 완성할 페이지</h2>
     </div>
 
   </div>
 
   <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
+      <h2 class="ui header underline" style="font-family: -webkit-pictograph"> Profile </h2>
+
       <div class="row">
-        <div class="ten wide column">       
+        <div class="fourteen wide column">
+          <h3 class="ui header">Undergraduate Research Assistant, Machine Learning & Vision Lab</h3>
+          <p>
+            I'm working as an undergraduate research assistant in Machine Learning & Vision lab led by Prof. Hyunwoo Kim.<br>
+            Research into Computer Vision, High-level scene understanding and Visual Relationship Detection.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="fourteen wide column">
+          <h3 class="ui header">Laboratory Internship, Operating System Lab</h3>
+          <p>
+            I worked as an undergraduate research assistant in Operating System lab led by Prof. Chuck Yoo for a year.
+            Mainly researched virtualization in OpenStack environment. Submitted a paper to Korea Computer Congress 2018(KCC 2018, 한국 정보과학회) on undergraduate poster session, accepted.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="fourteen wide column">
+          <h3 class="ui header">Web Developer & Designer</h3>
+          <p>
+            Designing and developing websites for clients. <br>
+            e.g. device booking, music co-producting and user based lame-jokes ranking.
+          </p>
+        </div>
+      </div>
+      <div class="ui divider"></div>
+      <div class="row">
+        <div class="ten wide column">
           <h3 class="ui header">Computer Science, Bachelor's degree</h3>
-          <p>I've been studying Computer science in Korea University since 2015. Now I'm studying in University of Copenhagen as an exchange student.</p>
+          <p>
+            I've been studying Computer science in Korea University since 2015.<br>
+            I studied in University of Copenhagen as an exchange student
+          </p>
         </div>
         <div class="two wide right floated column">
-          <div class="ui hidden section divider"></div>
+          <div class="ui hidden divider"></div>
           <img src="images/KU_Logo.gif" class="ui tiny image">
         </div>
         <div class="two wide right floated column">
-          <div class="ui hidden section divider"></div>
+          <div class="ui hidden divider"></div>
           <img src="images/KobenU_logo.png" class="ui tiny image">
         </div>
       </div>
-      <div class="row">
-        <div class="ten wide column">
-          <h3 class="ui header">Laboratory Internship, Operating System Lab</h3>
-          <p>I worked as an undergraduate research assistant in Operating System lab of Korea University for 1 year.
-            Mainly researched virtualization in OpenStack environment. Submitted a paper to Korea Computer Congress 2018(KCC 2018, 한국 정보과학회) on undergraduate poster session, accepted.</p>
-        </div>
-        <div class="two wide right floated column">
-          <div class="ui hidden section divider"></div>
-          <img src="images/KU_Logo.gif" class="ui tiny image">
-        </div>
-      </div>
+      <div class="ui divider"></div>
       <div class="row">
         <div class="ten wide column">
           <h3 class="ui header">Wanderlust</h3> 
-            <p>I have traveled a lot and want to travel more!</p>
+            <p>I have traveled a lot and want to travel more!<br></p>
+        </div>
+      </div>
+
+      <!-- Travel Thumbnail -->
+      <div class="ui link cards">
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Vietnam/Danang_2.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Vietnam</a>
+            <div class="meta">
+              2018 Feb
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Spain/Ronda.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Spain</a>
+            <div class="meta">
+              2018 Feb
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Portugal/Lisbon.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Portugal</a>
+            <div class="meta">
+              2018 Feb
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Malta/Malta.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Malta</a>
+            <div class="meta">
+              2018 Feb
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Italy/Venezia.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Italy</a>
+            <div class="meta">
+              2019 Jan
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/UK/Snowman.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">UK</a>
+            <div class="meta">
+              2018 Nov
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/EasternEurope/Prague.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Eastern Europe</a>
+            <div class="meta">
+              2018 Oct
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Germany/Octoberfest.jpg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Germany</a>
+            <div class="meta">
+              2018 Sep
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image" href="#">
+            <img src="images/Denmark/RoomWindow.JPG">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Denmark</a>
+            <div class="meta">
+              2018 Aug - 2019 Jan
+            </div>
+          </div>
+        </div>
+
+        <div class="ui card">
+          <a class="image">
+            <img src="images/Kotakinabalu.jpeg">
+          </a>
+          <div class="content">
+            <a class="header" href="#">Malaysia</a>
+            <div class="meta">
+              2017 Sep
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ui hidden divider"></div>
+      <div class="extra">
+        <div class="ui right aligned container">
+          <i class="ui right arrow icon"></i>
+          <a class="preparing replace_annoying_blue"> More </a> &emsp;&emsp;
         </div>
       </div>
     </div>
   </div>
 
-  <div class="ui vertical stripe center aligned segment">
-    <div class="ui text container">
-      <h3 class="ui header">Curriculum Vitae</h3>
-      <a class="ui basic black large button" href="https://yoonjinxd.github.io/Yoonjin/CV_Yoonjin_Chung.pdf">Open CV</a>
-      
-      <h4 class="ui horizontal header divider">
-        <a href="#">Or</a>
-      </h4>
-      
-      <h3 class="ui header">Linkedin</h3>
-      <a class="ui basic black large button", href="https://www.linkedin.com/in/yoonjin-chung-03783016a/">Open profile</a>
+  <div class="ui placeholder segment">
+    <div class="ui two column stackable center aligned grid">
+      <div class="ui vertical divider">Or</div>
+      <div class="middle aligned row">
+        <div class="column">
+          <h3 class="ui icon header"><i class="ui huge file alternate outline icon"></i>Curriculum Vitae</h3>
+          <a class="ui basic black large button buttonhover" href="https://yoonjinxd.github.io/Yoonjin/CV_Yoonjin_Chung.pdf">Open CV</a>
+        </div>
+        <div class="column">
+          <h3 class="ui icon header"><i class="ui huge github icon"></i>GitHub</h3>
+          <a class="ui basic black large button" href="https://github.com/YoonjinXD">Git Profile</a>
+        </div>
+      </div>
     </div>
   </div>
 
-
+  <!-- Footer -->
   <div class="ui inverted vertical footer segment">
     <div class="ui container">
         <div class="seven wide column">
@@ -273,3 +353,4 @@
 </body>
 
 </html>
+
