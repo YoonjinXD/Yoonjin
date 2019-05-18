@@ -68,6 +68,11 @@
       $('.preparing').click(function(){
           alert("심심할 때 만들 계획입니다 8ㅅ8");
       });
+      $('#hidden_btn').click(function(){
+          $('#Home_profile').hide();
+          $('#hidden_NodongSong').transition('fade in');
+          $('#hidden_NodongSong').animate({scrollTop:$(this.hash).offset().top}, 500);
+      });
     })
   ;
   </script>
@@ -110,7 +115,7 @@
   <div class="ui vertical masthead center aligned segment" id="Home_main">
     <!-- Header Profile !-->
     <div class="flex_centered">
-      <div class="ui text container">
+      <div id="Home_profile" class="ui text container">
         <img class="ui centered medium circular image" src="images/Profile_Sagi.png">
         <h2 class="ui inverted header" style="font-family: -webkit-pictograph">&nbsp;YOON JIN CHUNG </h2>
         <div class="ui item" style="color: white">
@@ -131,6 +136,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    
+    <div id="hidden_NodongSong" class="ui vertical center aligned segment" style="display: none">
+      <div class="middle aligned row">
+        <iframe width="600" height="385" src="https://www.youtube.com/embed/QUXKib-jfEM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <h4 class="ui header">Happy Coding!</h4>
       </div>
     </div>
 
@@ -349,6 +361,7 @@
           <p>anazzz1685@gmail.com</p>
           <p>chung1685@korea.ac.kr</p>
         </div>
+        <a id="hidden_btn" href="#hidden_NodongSong" class="ui black circular icon small button"></a>
     </div>
   </div>
 </div>

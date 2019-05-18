@@ -32,6 +32,13 @@ a.replace_annoying_blue{
     width: 15rem;
     height: 13rem;
 }
+#hidden_NodongSong{
+    transition-property: display;
+    transition-delay: 5s;
+    transition-timing-function: ease-in;
+    transition: 5s;
+    transition-duration: 5s;
+}
 
 
 /* Align */
