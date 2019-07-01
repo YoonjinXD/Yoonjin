@@ -16,3 +16,7 @@ document.addEventListener('mousemove', (e) => {
     p.setAttribute('data-gradStart', gradStart);
     p.setAttribute('data-gradEnd', gradEnd);
 });
+
+$('.modal')
+    .modal('show')
+;
