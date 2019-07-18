@@ -6,7 +6,7 @@ Last Updated 2019/07/18 - Yoonjin Chung
 
 ***
 
-### Topics 
+### 1.Topics 
 
 **[General NN]**
 
@@ -126,7 +126,7 @@ https://medium.com/analytics-vidhya/demystifying-neural-networks-a-mathematical-
 
 ***
 
-### 읽어보면 좋을 
+### 2.읽어보면 좋을 
 
 ##### -천상계 블로그 
 
@@ -239,7 +239,7 @@ MATraseE -> VRD. 어디까지 복잡해질 수 있나, 그래도 좋은 결과
 
 ***
 
-### 코드 
+### 3.코드 
 
 (MY)간단한 2-layer model (matrix 연산부 구현)
 
