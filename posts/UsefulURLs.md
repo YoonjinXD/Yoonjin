@@ -46,7 +46,7 @@ Illustrated LSTM
 
 http://arunmallya.github.io/writeups/nn/lstm/index.html#/
 
-The fall of RNN/LSTM (흐름 파악하기에 좋은 듯)
+The fall of RNN/LSTM 
 
 https://towardsdatascience.com/the-fall-of-rnn-lstm-2d1594c74ce0
 
