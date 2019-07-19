@@ -1,6 +1,11 @@
 
-
 ### TransformerS
+
+*References*
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+http://jalammar.github.io/illustrated-transformer/
+https://www.youtube.com/watch?v=mxGCEWOxfe8&t=480s
+
 
 #### 1. RNN
 
