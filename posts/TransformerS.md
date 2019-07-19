@@ -92,7 +92,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 위와 같은  LSTM, GRU 라는 개선에도 불구하고 이들은 모두 RNN 기반 구조였기에 Long-term dependency를 완전히 탈출하지는 못했다. 이러한 한계점을 타개해준 논문이 바로 그 유명한 'Attention is all you need' 이다. 어텐션이 어텐션 받고 있는 만큼 딥러닝에 관심 있다면 반드시 한번쯤 읽어보는 것이 좋다. 이 논문은 제목 그대로, 기존 RNN 기반 모델들을 아예 사용하지 않고 attention 기법만을 적용해도 sequence 모델을 다루는 데 손색이 없고 심지어 더 좋은 성능과 결과를 보인다는 내용이다. 
 
 아이디어는 대략 이렇다. 문장에서 중요한 부분만 기억하며 순차적으로 읽어나가는 것이 아니라, 병렬화(Parallelization)을 통해 한 방에 문장을 위에서 관조하자! 전체 문장에서 주목해야할 부분에 가중치를 높이는 방식이기 때문에 어떠한 정보를 잊어버릴 일이 없다. 즉, Long-term dependency를 완벽히 극복해낸 것이다. 이 논문에서 제시한 모델이 바로 transformer 이고 이것은 여러 분야에 응용되며 다양한 분야의 state-of-the-art 자리에 앉게 되었다.  
-
+<br>
 - **Overview**
   ![encoder-decoder](https://pozalabs.github.io/assets/images/encoder-decoder.png)
 
@@ -153,7 +153,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
   ![dimension](https://pozalabs.github.io/assets/images/%EC%B0%A8%EC%9B%90.png)
 
-  ![](images/Screenshot%20from%202019-07-15%2018-21-56.png)
+  ![](images/Screenshot 20from 202019-07-15 2018-21-56.png)
 
   
 
