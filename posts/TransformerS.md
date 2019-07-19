@@ -11,7 +11,7 @@ Seq2seq 모델의 가장 베이직한 아이디어. t번째에 대한 output을 
 
 기존 Input - Output 구조에서 hidden state 가 추가되어 동작하는데, 이 hidden state 는 간단하게 말하자면 '메모리 벡터' 라고 할 수 있고, 인간으로 치자면 기억을 담당하는 뇌의 한부분이라고 할 수 있겠다. 이 hidden state 는 처음엔 initialized vector, 즉 뇌가 빈 상태로 시작하여 인풋 아웃풋 계산을 거칠 때마다 방금 한 계산을 벡터의 형태로 기억하게 된다.
 
-![1563521709710](/home/jenzzz/.config/Typora/typora-user-images/1563521709710.png)
+![1563521709710](images/1563521709710.png)
 
 동영상 링크 https://jalammar.github.io/images/attention_tensor_dance.mp4
 
@@ -25,7 +25,7 @@ Seq2seq 모델의 가장 베이직한 아이디어. t번째에 대한 output을 
 
 위와 같은 RNN 구조의 가장 큰 한계점이 바로 <u>Long-Term dependency</u> 문제 였다. 한마디로 전달되는 뇌(hidden state)의 기억력이 딸렸다. 사실 알다시피 제네럴한 딥러닝 모델에서 대부분 사용하는 gradient descent는 본래 vanishing gradient problem을 가지고 있다. RNN에서는 이 현상이 문장이 길어질수록 앞의 내용을 잊어버리는 것처럼 나타나게 된 것이다.
 
-![](/home/jenzzz/Pictures/Screenshot from 2019-07-15 18-01-36.png)
+![](images/Screenshot from 2019-07-15 18-01-36.png)
 
 이에 등장한 메커니즘이 바로 그 유명한 attention 기법이다. 이전의 베이직한 RNN 모델은 Encoder가 먼저 순차적으로 문장을 읽어가며 하나의 뇌를 전달해나갔으나 이 뇌의 용량이 부족하다는 문제가 있었다. 그렇다면, 뇌를 여러개 만들자! 이번에는 encoder가 단어를 읽는 족족 추출한 feature를 decoder에 전달한다. 이로 인해 Long-term dependency 문제가 많이 해소될 수 있었으나, 이게 attention이라는 단어와는 잘 안 맞는다는 생각이 들지 않나...? attention이라면 주목을 해야 하는데... 이건 주목이라기 보단 동적으로 feature extraction & generation 하는 과정으로 보인다. 만약 이런 의문이 들었다면 정상이다. 조금 더 뒤에 진짜 attention의 의미를 제대로 보여주는 모델이 나온다. 
 
@@ -114,23 +114,23 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
   ![scaled-dot-product-attention](https://pozalabs.github.io/assets/images/sdpa.PNG)
 
-  ![1562661109138](/home/jenzzz/.config/Typora/typora-user-images/1562661109138.png)
+  ![1562661109138](images/1562661109138.png)
 
   Q는 query vector를, K는 key vector를, V는 Value vector를 의미한다. dk는 input의 디멘션을 의미한다. 여기서 요 벡터들이 갑자기 왜 나와서 이러는 지 혼란스러울텐데... 이 친구들은 한마디로 attention을 구현하기 위해 필요한 몇가지 역할들을 각각 담당하는 벡터들이라고 생각하면 된다. 
 
   **(필요한 몇가지 역할?)** Query 벡터는 말 그대로 현재 쿼리 단어를 뜻하고, 여기에 첫번째로 곱해지는 Key 벡터는 어떤 단어와의 상관 관계 정보를 담고 있다고 생각할 수 있다. 이 둘을 matmul 했을 때 나오는 결과를 Score라고 부르는데, 이 값이 높으면 두 단어의 연관성이 높음을 뜻한다(and vice versa).
-  ![1563258013135](/home/jenzzz/.config/Typora/typora-user-images/1563258013135.png)
+  ![1563258013135](images/1563258013135.png)
 
   이후 이 스코어 값을 0과 1사이의 확률값으로 표현하기 위해 softmax function을 취해주는데 이 때 Key 벡터의 루트값으로 먼저 score를 나눠준다. 논문에서는 key 벡터의 차원이 커질수록 스코어 계산값이 증대하는 문제를 보완하기 위해 추가한 연산이라고 한다. 
 
-  여튼 이렇게 계산된 확률 값들을 Value 벡터와 다시 곱해준다. 이 Value 벡터는 앞서 나온 Key 벡터와 pair 즉 한 쌍을 이루고 있는 것으로 **현재 내가 이해하기론 기존 워드 임베딩과 같은 존재 같다.** 따라서, Softmax값을 Value 벡터와 곱하는 이유는 내가 현재 보고 있는 이 단어와 가장 유의미한 관계를 가지고 있는 단어 임베딩을 가장 선명하게, 별 상관없는 단어의 임베딩은 아주 희미하게 남기겠다는 뜻이다. 마지막으로 요 값들을 모두 시그마한  것이 Attention layer를 거친 어떤 단어 A의 최종 output이 된다. 이는 문장 속의 어떤 단어 A가 가진 의미, 중요성, 즉 우리가 기존 attention 기법에서 사용한 hidden layer와 비슷한 시맨틱이라고 보면 된다.![1563258472548](/home/jenzzz/.config/Typora/typora-user-images/1563258472548.png)
+  여튼 이렇게 계산된 확률 값들을 Value 벡터와 다시 곱해준다. 이 Value 벡터는 앞서 나온 Key 벡터와 pair 즉 한 쌍을 이루고 있는 것으로 **현재 내가 이해하기론 기존 워드 임베딩과 같은 존재 같다.** 따라서, Softmax값을 Value 벡터와 곱하는 이유는 내가 현재 보고 있는 이 단어와 가장 유의미한 관계를 가지고 있는 단어 임베딩을 가장 선명하게, 별 상관없는 단어의 임베딩은 아주 희미하게 남기겠다는 뜻이다. 마지막으로 요 값들을 모두 시그마한  것이 Attention layer를 거친 어떤 단어 A의 최종 output이 된다. 이는 문장 속의 어떤 단어 A가 가진 의미, 중요성, 즉 우리가 기존 attention 기법에서 사용한 hidden layer와 비슷한 시맨틱이라고 보면 된다.![1563258472548](images/1563258472548.png)
 
   하지만 이해될 때만 이해되고 또 뒤돌아 보면 이해가 안될 수 있으니 마지막으로 한번만 더 정리해보자. Q와 K를 Dot product한 후 루트 dk로 스케일링하는 과정에 의해 둘 사이의 유사도를 구한 뒤(이 과정은 cosine similarity와 유사) 이 유사도를 전체 문장에 대해 softmax를 취해 확률값으로 나타낸다. 이 값을 Value 벡터와 dot-product 함으로써 query 와 유사한 value일수록, 중요한 value일 수록 결과 값이 높아진다. 즉, 현재 단어의 output에 그 단어와 가장 연관 높은 단어들의  Value 벡터들을 가장 많이 포함시키려는 과정이다.(softmax 연산을 왜 집어넣었는 지 직관적으로 이해할 수 있다.)
 
   
 
   **(3) Multi Head Attention**
-  ![](/home/jenzzz/Pictures/Screenshot from 2019-07-15 18-24-53.png)
+  ![](images/Screenshot from 2019-07-15 18-24-53.png)
   한번에 여러개의 attention 쓰레드를 내리는 것. 왜 좋을까? 어떤 문장의 단어는 2~3개의 단어와 밀접한 연관을 가지고 있을 수 있고, 또는 모호한 애매한 관계를 가지고 있는 단어들 역시 처리할 수 있다. 
 
   > Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions
@@ -145,11 +145,11 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
   ![dimension](https://pozalabs.github.io/assets/images/%EC%B0%A8%EC%9B%90.png)
 
-  ![](/home/jenzzz/Pictures/Screenshot%20from%202019-07-15%2018-21-56.png)
+  ![](images/Screenshot%20from%202019-07-15%2018-21-56.png)
 
   
 
-  [코드를 봅시다](http://nlp.seas.harvard.edu/2018/04/03/attention.html) | [논문을 읽읍시다](https://arxiv.org/pdf/1706.03762.pdf)
+  [코드](http://nlp.seas.harvard.edu/2018/04/03/attention.html) | [논문](https://arxiv.org/pdf/1706.03762.pdf)
 
   
 
@@ -193,7 +193,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
 **(1) Attention Learning Pattern**
 
-![1563523560281](/home/jenzzz/.config/Typora/typora-user-images/1563523560281.png)
+![1563523560281](images/1563523560281.png)
 
 논문 팀은 Transformer의 어텐션 기법이 어떤 패턴으로 학습 되고 있는 지 먼저 연구했다. 실험은 이렇다. 128 레이어의 traditional transformer가 CIFAR-10 데이터셋을 학습하는 과정의 깊이 별로, 다음 pixel을 생성할 때 가장 attention D웨이트가 높은(=가장 주목하고 있는) pixel이 어디인 지 확인하기 위해 해당 pixel들을 밝게 표현한다. 그림 a,b,c,d 는 순서대로 레이어가 깊어질수록 트랜스포머가 특정 픽셀을 생성해낼 때 attention을 강하게 주는 픽셀들을 밝게(하얗게) 나타내는 그림이다. 레이어 초반부에는 a에서 보다시피 horizontal하게 현재 생성하는 pixel의 주변부만 어텐션 하고 있는 반면그림 b의 레이어 19와 20에서는 vertically 하게 어텐션 하고 있음을 알 수 있다. 그림 c의 20 ~ 64 사이의 레이어에서는 row와 column 레벨을 벗어나 global data dependent 하게 학습 패턴이 잡혀진 것을 볼 수 있고, 64 레이어 이후부터는 전체 이미지에서 굉장히 적은 양의 픽셀들만을 주목하고 있음을 볼 수 있다(사진에서는 잘 안 보인다). 이 그림을 아주 잘 표현한 움직이는 이미지가 [openai 공식 블로그 포스트](https://openai.com/blog/sparse-transformer/) 에 있다.
 
@@ -203,7 +203,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
 **(2) Strided & Fixed** 
 
-![1563524350311](/home/jenzzz/.config/Typora/typora-user-images/1563524350311.png)
+![1563524350311](images/1563524350311.png)
 
 (a)는 나 이전의 모든 데이터에 대해 연산하는 기존 Transformer, (b), (c)는 Sparse Transformer에서 제안하는 두가지 축소된 attention 기법이다. 집에 가야돼서 이 부분부터는 다음주에.... 
 
