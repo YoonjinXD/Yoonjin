@@ -30,7 +30,7 @@ Seq2seq 모델의 가장 베이직한 아이디어. t번째에 대한 output을 
 
 위와 같은 RNN 구조의 가장 큰 한계점이 바로 <u>Long-Term dependency</u> 문제 였다. 한마디로 전달되는 뇌(hidden state)의 기억력이 딸렸다. 사실 알다시피 제네럴한 딥러닝 모델에서 대부분 사용하는 gradient descent는 본래 vanishing gradient problem을 가지고 있다. RNN에서는 이 현상이 문장이 길어질수록 앞의 내용을 잊어버리는 것처럼 나타나게 된 것이다.
 
-![](images/Screenshot from 2019-07-15 18-01-36.png)
+![img](images/18-01-36.png)
 
 이에 등장한 메커니즘이 바로 그 유명한 attention 기법이다. 이전의 베이직한 RNN 모델은 Encoder가 먼저 순차적으로 문장을 읽어가며 하나의 뇌를 전달해나갔으나 이 뇌의 용량이 부족하다는 문제가 있었다. 그렇다면, 뇌를 여러개 만들자! 이번에는 encoder가 단어를 읽는 족족 추출한 feature를 decoder에 전달한다. 이로 인해 Long-term dependency 문제가 많이 해소될 수 있었으나, 이게 attention이라는 단어와는 잘 안 맞는다는 생각이 들지 않나...? attention이라면 주목을 해야 하는데... 이건 주목이라기 보단 동적으로 feature extraction & generation 하는 과정으로 보인다. 만약 이런 의문이 들었다면 정상이다. 조금 더 뒤에 진짜 attention의 의미를 제대로 보여주는 모델이 나온다. 
 
@@ -138,7 +138,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
   
 
   **(3) Multi Head Attention**
-  ![](images/Screenshot from 2019-07-15 18-24-53.png)
+  ![img](images/18-24-53.png)
   한번에 여러개의 attention 쓰레드를 내리는 것. 왜 좋을까? 어떤 문장의 단어는 2~3개의 단어와 밀접한 연관을 가지고 있을 수 있고, 또는 모호한 애매한 관계를 가지고 있는 단어들 역시 처리할 수 있다. 
 
   > Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions
@@ -153,7 +153,7 @@ https://ratsgo.github.io/deep%20learning/2017/05/13/GRU/
 
   ![dimension](https://pozalabs.github.io/assets/images/%EC%B0%A8%EC%9B%90.png)
 
-  ![](images/Screenshot 20from 202019-07-15 2018-21-56.png)
+  ![img](images/18-21-56.png)
 
   
 
