@@ -5,7 +5,7 @@
 #### 1. RNN
 
 Seq2seq 모델의 가장 베이직한 아이디어. t번째에 대한 output을 생성하기 위해 t번째 해당 input과 t-1번째 hidden state를 사용하여 문장의 순차적 특성을 유지한다는 아이디어이다.
-![1563521630325](/home/jenzzz/.config/Typora/typora-user-images/1563521630325.png)
+![1563521630325](images/1563521630325.png)
 
 동영상 링크 https://jalammar.github.io/images/RNN_1.mp4
 
