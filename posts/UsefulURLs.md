@@ -26,6 +26,10 @@ Must-Read Papers on GANs
 
 https://towardsdatascience.com/must-read-papers-on-gans-b665bbae3317
 
+Scene Text 논문 모음
+
+https://github.com/yflv-yanxia/scene_text
+
 
 
 **[RNN]**
@@ -168,6 +172,7 @@ http://karpathy.github.io/
 
 How not to be Wrong: The hidden Maths of Everyday Life
 
+Introduction to Convex optimization (Nesterov.)
 
 
 ##### -논문 
