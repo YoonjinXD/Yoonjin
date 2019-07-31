@@ -88,8 +88,6 @@ https://medium.com/@nainaakash012/efficientnet-rethinking-model-scaling-for-conv
 
 
 
-
-
 **[NLP]**
 
 BERT word embedding tutorial
@@ -99,8 +97,6 @@ https://mccormickml.com/2019/05/14/BERT-word-embeddings-tutorial/ㅑ*
 Image Captioning(From translation to Attention)
 
 https://medium.com/mlreview/multi-modal-methods-image-captioning-from-translation-to-attention-895b6444256e
-
-
 
 
 
@@ -206,6 +202,14 @@ Sparse Transformer
 
 https://arxiv.org/pdf/1904.10509.pdf
 
+Recent Trends in Deep Learning Based NLP (NLP 최근동향 총정리. 짱좋음)
+
+https://arxiv.org/pdf/1708.02709.pdf
+
+Transformer-XL
+
+https://arxiv.org/pdf/1901.02860.pdf
+
 
 
 **[Image Captioning]**
@@ -256,3 +260,15 @@ https://github.com/tunz/transformer-pytorch
 MXNet: Sockeye Project (seq2seq 프레임워크)
 
 https://github.com/awslabs/sockeye
+
+Tensor2Tensor
+
+https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/models
+
+NLP Tutorial
+
+https://github.com/graykode/nlp-tutorial?source=post_page---------------------------
+
+BERT 모델 (카카오 브레인 이동현님)
+
+https://github.com/dhlee347/pytorchic-bert/blob/master/models.py#L123-L133
