@@ -14,9 +14,7 @@
     align-items: center;
     justify-content: center;
     height: auto;
-
     /*background: linear-gradient(135deg, var(--grad-start), var(--grad-end));*/
-
 }
 .underline{
     border-bottom: 1px solid !important;
