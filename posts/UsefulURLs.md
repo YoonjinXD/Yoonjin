@@ -2,7 +2,7 @@
 
 공유 목적으로 만들던 것이 아니라 토픽이 한정되어 있고 정신 사나울 수 있습니다... :) 
 
-Last Updated 2019/07/18 - Yoonjin Chung 
+Last Updated 2019/08/23 - Yoonjin Chung 
 
 ***
 
@@ -102,6 +102,10 @@ Image Captioning(From translation to Attention)
 
 https://medium.com/mlreview/multi-modal-methods-image-captioning-from-translation-to-attention-895b6444256e
 
+Transformers SOTA library
+
+https://github.com/huggingface/pytorch-transformers
+
 
 
 **[Math]**
@@ -121,6 +125,10 @@ https://darkpgmr.tistory.com/106
 Mathematical Approach
 
 https://medium.com/analytics-vidhya/demystifying-neural-networks-a-mathematical-approach-part-1-4e10bed61400
+
+시계열 데이터 예측에 대한 전반적 정리
+
+https://otexts.com/fppkr/AR.html
 
 
 
@@ -169,6 +177,8 @@ http://karpathy.github.io/
 How not to be Wrong: The hidden Maths of Everyday Life
 
 Introduction to Convex optimization (Nesterov.)
+
+
 
 
 ##### -논문 
@@ -242,7 +252,7 @@ YOLO
 
 EfficientNet
 
-MATraseE -> VRD. 어디까지 복잡해질 수 있나, 그래도 좋은 결과
+MATraseE
 
 
 
